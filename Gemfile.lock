@@ -1,0 +1,28 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    dropbox (1.2.3)
+      json (>= 1.2.0)
+      mechanize (>= 1.0.0)
+      multipart-post (>= 1.0)
+      oauth (>= 0.3.6)
+    haml (3.0.25)
+    json (1.5.1)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
+    multipart-post (1.1.0)
+    nokogiri (1.4.4)
+    oauth (0.4.4)
+    rack (1.2.1)
+    sinatra (1.1.2)
+      rack (~> 1.1)
+      tilt (~> 1.2)
+    tilt (1.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dropbox
+  haml
+  sinatra
