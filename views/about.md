@@ -1,0 +1,3 @@
+is your personal private wiki &mdash; collection of linked notes in plain text, [Markdown](http://daringfireball.net/projects/markdown/syntax) and/or [Textile](http://textism.com/tools/textile/) stored in [Dropbox](http://db.tt/EnvkDxc) (a free web service for storing, syncing and sharing your files).
+
+Created by [Grigory V. (myfreeweb)](http://myfreeweb.ru) in 24 hours with [Ruby](http://ruby-lang.org), [Sinatra](http://sinatrarb.com), [Sequel](http://sequel.rubyforge.org), [Haml](http://haml-lang.com), [Sass](http://sass-lang.com)/[Compass](http://compass-style.org), [RDiscount](https://github.com/rtomayko/rdiscount), [RedCloth](http://redcloth.org) and hosted on [Heroku](http://heroku.com).

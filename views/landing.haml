@@ -3,6 +3,7 @@
   %head
     %title Wikibox
     = haml :head
-  %body
-    %h1 Wikibox alpha
-    %a{:href => "/auth"} Login with Dropbox
+  %body#landing
+    %h1 Wikibox
+    = markdown :about
+    %a#auth{:href => "/auth"} Login with Dropbox

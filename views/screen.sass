@@ -1,4 +1,5 @@
 @import compass/reset
+@import compass/reset/utilities
 @import compass/utilities
 @import compass/utilities/general/min
 @import compass/utilities/general/clearfix
@@ -7,14 +8,18 @@
 @import compass/utilities/links/unstyled-link
 @import compass/css3/box
 @import compass/css3/transition
+@import compass/css3/border-radius
+@import compass/css3/gradient
+
++reset-html5
 
 $sidepad: 2em
+$col: #e80556
 
 body
   font: 16px "Helvetica Neue", sans-serif
 
 a
-  $col: #e80556
   +link-colors($col, lighten($col, 25%), saturate($col, 40%))
   +hover-link
 
@@ -22,10 +27,12 @@ body > header
   padding: 0.5em $sidepad*0.6
   border-bottom: #c4c4c4 solid 1px
   font-size: 1.2em
+  overflow: hidden
   h1
     float: left
   nav
     text-align: right
+    width: 100%
 
 .flash
   padding: 0.8em $sidepad
@@ -44,9 +51,12 @@ body > header
 .hidden
   display: none
 
-.page
+#page
   #wrapper
     +display-box
+    +box-pack(start)
+    +box-orient(horizontal)
+    min-width: 90% /* damn gecko */
     padding: 2em $sidepad 0
     nav
       +box-flex(1)
@@ -78,3 +88,50 @@ body > header
           font:
             weight: bold
             size: 1.4em
+
+#landing
+  text-align: center
+  padding: 5em
+  h1
+    font-size: 3em
+  p
+    margin: 2em auto
+    width: 55%
+  #auth
+    display: block
+    width: 70%
+    margin: 0 auto
+    padding: 0.4em 0
+    font:
+      weight: bold
+      size: 2.5em
+    +border-radius(0.3em)
+    +linear-gradient(color-stops(lighten($col, 25%), darken($col, 20%)))
+    color: #fefefe
+    text-shadow: lighten($col, 10%) 0 1px
+
+.no-cssgradients #auth
+  background: url('http://webgradients.appspot.com/make?start=FC71A2&end=840331&height=80') repeat-x #840331
+
+#settings
+  & > h1
+    margin: 1em $sidepad
+    font:
+      weight: bold
+      size: 1.4em
+  label, input
+    float: left
+    margin-bottom: 0.6em
+  label
+    width: 35%
+    line-height: 1.25em
+    text-align: right
+    vertical-align: text-bottom
+    clear: left
+  input
+    width: 40%
+  button
+    display: block
+    margin-left: 35%
+    clear: left
+    font-size: 1.2em
