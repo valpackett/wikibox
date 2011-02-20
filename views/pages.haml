@@ -11,6 +11,8 @@
           - for page in @pages
             %li
               %a{:href => "/pages/#{page}", :class => ("active" if page == @cur_page[:name])}= page
+          %li
+            %input{:type => "text", :placeholder => "Create a new file"}
       %article
         %header
           %h1= @cur_page[:name]

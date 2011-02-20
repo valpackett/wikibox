@@ -4,22 +4,30 @@
     $dom.addClass($dom.get('article form')[0], 'hidden');
     var editlink = $dom.create('a'), bd = $dom.get('#body')[0], af = $dom.get('article form')[0];
     editlink.innerHTML = 'edit';
-    editlink.href = 'javascript:void(0)';
-    editlink.onclick = function() {
+    editlink.href = 'javascript:toggle_edit()';
+    function toggle_edit() {
     $dom.toggleClass(bd, 'hidden', !$dom.hasClass(bd, 'hidden'));
     $dom.toggleClass(af, 'hidden', !$dom.hasClass(af, 'hidden'));
     if (editlink.innerHTML == 'edit') editlink.innerHTML = 'cancel'
-    else editlink.innerHTML = 'edit';
+    else {editlink.innerHTML = 'edit';location.hash = ''}
     }
     $dom.get('article header')[0].appendChild(editlink);
-- if flash
+    if (location.hash == '#edit') toggle_edit();
+    window.onhashchange = function(e) {
+    if (location.hash == '#edit') toggle_edit();
+    }
+    $dom.get('nav input')[0].onkeyup = function(e) {
+    if(e.which) var keycode = e.which; else var keycode = e.keyCode;
+    if(keycode == 13) location.href = '/pages/' + this.value + '#edit';
+    }
+- if flash[:info] or flash[:error]
   :javascript
-    if (!Array.prototype.forEach) {Array.prototype.forEach = function(fun){var len=this.length;
-    if (typeof fun!="function") throw new TypeError();
-    var thisp = arguments[1];for (var i = 0; i < len; i++){if (i in this)fun.call(thisp, this[i], i, this);}}}
+    if(!Array.prototype.forEach){Array.prototype.forEach = function(fun){var len=this.length;
+    if(typeof fun!="function") throw new TypeError();
+    var thisp = arguments[1];for (var i=0;i<len;i++){if(i in this)fun.call(thisp,this[i],i,this);}}}
     var el = $dom.get('.flash');
     setTimeout(function() {
-    if (Modernizr.csstransitions) el.forEach(function(e){$dom.addClass(e,'fade')})
+    if(Modernizr.csstransitions) el.forEach(function(e){$dom.addClass(e,'fade')});
     else el.forEach(function(e){$dom.transform(e,{opacity:0},600)});
     }, 1500);
     setTimeout(function() {
