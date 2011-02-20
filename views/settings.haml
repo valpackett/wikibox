@@ -8,5 +8,7 @@
     %h1 Settings
     %form{:method => "post", :action => ""}
       %label{:for => "folder"} Folder:
-      %input{:name => "folder", :type => "text", value => @folder}
+      %input{:name => "folder", :type => "text", :value => @user.folder}
+      %label{:for => "indexfile"} Index file (main page):
+      %input{:name => "indexfile", :type => "text", :value => @user.indexfile}
       %button{:type => "submit"} Save

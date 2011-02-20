@@ -12,8 +12,8 @@
             %a{:href => "/pages/#{page}"}= page
     %article
       %header
-        %h1= page
-        %a{:href => "/pages/#{@cur_page['name']}/delete"} delete
+        %h1= @cur_page[:name]
+        %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
       = @cur_page['text'] or "This page doesn't exist yet."
     %form{:method => "post", :action => ""}
       %textarea{:name => "text"}= @cur_page['text']
