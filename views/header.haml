@@ -1,6 +1,10 @@
 %header
   %h1 Wikibox
-  = if flash[:error]
-    %div.error= flash[:error]
-  = if flash[:info]
-    %div.info= flash[:info]
+  %nav
+    %strong= @user.email
+    %a{:href => "/settings"} settings
+    %a{:href => "/logout"} log out
+= if flash[:error]
+  %div.error= flash[:error]
+= if flash[:info]
+  %div.info= flash[:info]
