@@ -4,6 +4,8 @@ gem 'haml'
 gem 'dropbox'
 gem 'sequel'
 gem 'rack-flash'
+gem 'rdiscount'
+gem 'RedCloth'
 group :development do
   gem 'sqlite3-ruby'
   gem 'ruby-debug'

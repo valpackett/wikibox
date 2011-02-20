@@ -14,7 +14,7 @@
       %header
         %h1= @cur_page[:name]
         %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
-      = @cur_page['text'] or "This page doesn't exist yet."
+      = wikify(@cur_page)
     %form{:method => "post", :action => ""}
-      %textarea{:name => "text"}= @cur_page['text']
+      %textarea{:name => "text"}= @cur_page[:text]
       %button{:type => "submit"} Save

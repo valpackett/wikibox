@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.7)
     columnize (0.3.2)
     dropbox (1.2.3)
       json (>= 1.2.0)
@@ -19,6 +20,7 @@ GEM
     rack (1.2.1)
     rack-flash (0.1.1)
       rack
+    rdiscount (1.6.8)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -37,10 +39,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   dropbox
   haml
   pg
   rack-flash
+  rdiscount
   ruby-debug
   sequel
   sinatra
