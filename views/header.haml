@@ -1,10 +1,11 @@
 %header
-  %h1 Wikibox
+  %h1
+    %a{:href => "/"} Wikibox
   %nav
     %strong= @user.email
     %a{:href => "/settings"} settings
     %a{:href => "/logout"} log out
-= if flash[:error]
-  %div.error= flash[:error]
-= if flash[:info]
-  %div.info= flash[:info]
+- if flash[:error]
+  %div.flash.error= flash[:error]
+- if flash[:info]
+  %div.flash.info= flash[:info]

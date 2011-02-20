@@ -3,18 +3,19 @@
   %head
     %title Wikibox
     = haml :head
-  %body
+  %body.page
     = haml :header
-    %nav
-      %ul
-        = for page in @pages
-          %li
-            %a{:href => "/pages/#{page}"}= page
-    %article
-      %header
-        %h1= @cur_page[:name]
-        %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
-      = wikify(@cur_page)
-    %form{:method => "post", :action => ""}
-      %textarea{:name => "text"}= @cur_page[:text]
-      %button{:type => "submit"} Save
+    #wrapper
+      %nav
+        %ul
+          - for page in @pages
+            %li
+              %a{:href => "/pages/#{page}", :class => ("active" if page == @cur_page[:name])}= page
+      %article
+        %header
+          %h1= @cur_page[:name]
+          %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
+        = wikify(@cur_page)
+        %form{:method => "post", :action => ""}
+          %textarea{:name => "text"}= @cur_page[:text]
+          %button{:type => "submit"} Save
