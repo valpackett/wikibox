@@ -1,0 +1,6 @@
+%header
+  %h1 Wikibox
+  = if flash[:error]
+    %div.error= flash[:error]
+  = if flash[:info]
+    %div.info= flash[:info]

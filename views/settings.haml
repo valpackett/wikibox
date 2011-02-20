@@ -1,0 +1,12 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %title Settings / Wikibox
+    = haml :head
+  %body
+    = haml :header
+    %h1 Settings
+    %form{:method => "post", :action => ""}
+      %label{:for => "folder"} Folder:
+      %input{:name => "folder", :type => "text", value => @folder}
+      %button{:type => "submit"} Save
