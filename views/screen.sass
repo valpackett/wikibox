@@ -1,0 +1,67 @@
+@import compass/reset
+@import compass/utilities
+@import compass/utilities/general/clearfix
+@import compass/utilities/links/hover-link
+@import compass/utilities/links/link-colors
+@import compass/utilities/links/unstyled-link
+@import compass/css3/box
+@import compass/css3/transition
+
+$sidepad: 2em
+
+body
+  font: 16px "Helvetica Neue", sans-serif
+
+a
+  $col: #e80556
+  +link-colors($col, lighten($col, 25%), saturate($col, 40%))
+  +hover-link
+
+body > header
+  padding: 0.5em $sidepad*0.6
+  border-bottom: #c4c4c4 solid 1px
+  font-size: 1.2em
+  h1
+    float: left
+  nav
+    text-align: right
+
+.flash
+  padding: 0.8em $sidepad
+  +transition(opacity, 0.6s, linear)
+  &.fade
+    opacity: 0
+
+.info
+  background: #ffdf6a
+  color: #212121
+
+.error
+  background: #d00
+  color: #fdfdfd
+
+.page
+  #wrapper
+    +display-box
+    padding: 2em $sidepad 0
+    nav
+      +box-flex(1)
+      ul
+        +no-bullets
+      .active
+        +unstyled-link
+    article
+      line-height: 1.35em
+      p
+        margin-bottom: 1em
+      +box-flex(4)
+      header
+        text-align: right
+        border-bottom: #a2a2a2 dashed 1px
+        margin-bottom: 0.65em
+        +clearfix
+        h1
+          float: left
+          font:
+            weight: bold
+            size: 1.4em

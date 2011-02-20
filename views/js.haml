@@ -1,0 +1,11 @@
+- if flash
+  %script{:type => "text/javascript", :src => "/$dom.js"}
+  :javascript
+    var el = $dom.get('.flash');
+    setTimeout(function() {
+    if (Modernizr.csstransitions) el.forEach(function(e){$dom.addClass(e,'fade')})
+    else el.forEach(function(e){$dom.transform(e,{opacity:0},600)});
+    }, 1500);
+    setTimeout(function() {
+    el.forEach(function(e){e.outerHTML=''});
+    }, 2100)
