@@ -51,13 +51,16 @@ body > header
 .hidden
   display: none
 
+label:after
+  content: ":"
+
 #page
   #wrapper
     +display-box
     +box-pack(start)
     +box-orient(horizontal)
     min-width: 90% /* damn gecko */
-    padding: 2em $sidepad 0
+    margin: 2em $sidepad 0
     nav
       +box-flex(1)
       input
@@ -135,3 +138,17 @@ body > header
     margin-left: 35%
     clear: left
     font-size: 1.2em
+
+@media screen and (max-width: 480px)
+  body
+    font-size: 14px
+  .long
+    display: none
+  #wrapper
+    display: block !important
+    margin: 2em 1em 0
+    nav
+      margin-bottom: 2em
+    article
+      header
+        font-size: 1.2em
