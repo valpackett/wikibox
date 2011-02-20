@@ -1,5 +1,18 @@
+%script{:type => "text/javascript", :src => "/$dom.js"}
+- if @cur_page
+  :javascript
+    $dom.addClass($dom.get('article form')[0], 'hidden');
+    var editlink = $dom.create('a'), bd = $dom.get('#body')[0], af = $dom.get('article form')[0];
+    editlink.innerHTML = 'edit';
+    editlink.href = 'javascript:void(0)';
+    editlink.onclick = function() {
+    $dom.toggleClass(bd, 'hidden', !$dom.hasClass(bd, 'hidden'));
+    $dom.toggleClass(af, 'hidden', !$dom.hasClass(af, 'hidden'));
+    if (editlink.innerHTML == 'edit') editlink.innerHTML = 'cancel'
+    else editlink.innerHTML = 'edit';
+    }
+    $dom.get('article header')[0].appendChild(editlink);
 - if flash
-  %script{:type => "text/javascript", :src => "/$dom.js"}
   :javascript
     if (!Array.prototype.forEach) {Array.prototype.forEach = function(fun){var len=this.length;
     if (typeof fun!="function") throw new TypeError();

@@ -1,5 +1,6 @@
 @import compass/reset
 @import compass/utilities
+@import compass/utilities/general/min
 @import compass/utilities/general/clearfix
 @import compass/utilities/links/hover-link
 @import compass/utilities/links/link-colors
@@ -40,6 +41,9 @@ body > header
   background: #d00
   color: #fdfdfd
 
+.hidden
+  display: none
+
 .page
   #wrapper
     +display-box
@@ -52,9 +56,16 @@ body > header
         +unstyled-link
     article
       line-height: 1.35em
+      +box-flex(4)
       p
         margin-bottom: 1em
-      +box-flex(4)
+      textarea
+        display: block
+        width: 90%
+        +min-height(20em)
+        margin: 0 auto
+      button
+        margin: 1em 0 0 5%
       header
         text-align: right
         border-bottom: #a2a2a2 dashed 1px

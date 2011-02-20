@@ -15,7 +15,7 @@
         %header
           %h1= @cur_page[:name]
           %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
-        = wikify(@cur_page)
+        %section#body= wikify(@cur_page)
         %form{:method => "post", :action => ""}
           %textarea{:name => "text"}= @cur_page[:text]
           %button{:type => "submit"} Save
