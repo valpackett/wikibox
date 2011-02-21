@@ -8,6 +8,7 @@ gem 'rack-flash'
 gem 'rack_csrf'
 gem 'rdiscount'
 gem 'RedCloth'
+gem 'org-ruby'
 group :development do
   gem 'sqlite3-ruby'
   gem 'ruby-debug'
