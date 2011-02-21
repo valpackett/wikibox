@@ -19,6 +19,7 @@
           %a{:href => "/pages/#{@cur_page[:name]}/delete"} delete
         %section#body= wikify(@cur_page)
         %form{:method => "post", :action => ""}
+          = csrf_tag
           %textarea{:name => "text"}= @cur_page[:text]
           %button{:type => "submit"} Save
     = haml :js

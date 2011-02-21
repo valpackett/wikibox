@@ -5,6 +5,7 @@ gem 'compass'
 gem 'dropbox'
 gem 'sequel'
 gem 'rack-flash'
+gem 'rack_csrf'
 gem 'rdiscount'
 gem 'RedCloth'
 group :development do

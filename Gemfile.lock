@@ -22,6 +22,8 @@ GEM
     rack (1.2.1)
     rack-flash (0.1.1)
       rack
+    rack_csrf (2.1.0)
+      rack (>= 0.9)
     rdiscount (1.6.8)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
@@ -47,6 +49,7 @@ DEPENDENCIES
   haml
   pg
   rack-flash
+  rack_csrf
   rdiscount
   ruby-debug
   sequel
