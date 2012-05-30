@@ -1,7 +1,7 @@
 %meta{:charset => "utf-8"}
-%meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
-%link{:rel => "stylesheet", :media => "screen", :href => "/screen.css"}
-%script{:type => "text/javascript", :src => "/modernizr.js"}
+%meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0"}
+%link{:rel => "stylesheet", :href => "/screen.css"}
+%script{:src => "/modernizr.js"}
 - if @cur_page
   :javascript
     Modernizr.load({test: Modernizr.flexbox, nope: ['https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js', 'https://github.com/doctyper/flexie/raw/master/dist/flexie.min.js']})
