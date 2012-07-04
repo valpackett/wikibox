@@ -132,7 +132,7 @@ get '/pages/:page' do |page|
   end
   db_session.mode=(:dropbox)
   root = db_session.list("/")
-  for entry in root
+  root.each do |entry|
     if entry.directory? and entry.path == "/" + @user.folder then folder = entry end
   end
   if not folder then
@@ -145,7 +145,7 @@ get '/pages/:page' do |page|
   end
   pages = db_session.list(@user.folder)
   @pages = []
-  for entry in pages
+  pages.each do |entry|
     if entry.path == "/#{@user.folder}/#{page}" then reqpage = entry end
     @pages.push(entry.path.gsub("/#{@user.folder}/", ""))
   end
@@ -167,7 +167,7 @@ post '/pages/:page' do |page|
   end
   db_session.mode=(:dropbox)
   root = db_session.list("/")
-  for entry in root
+  root.each do |entry|
     if entry.directory? and entry.path == "/" + user.folder then folder = entry end
   end
   if not folder then db_session.create_folder(user.folder) end
@@ -187,7 +187,7 @@ get '/pages/:page/delete' do |page|
   end
   db_session.mode=(:dropbox)
   root = db_session.list("/")
-  for entry in root
+  root.each do |entry|
     if entry.directory? and entry.path == "/" + user.folder then folder = entry end
   end
   if not folder then db_session.create_folder(user.folder) end
