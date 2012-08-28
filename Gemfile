@@ -2,16 +2,15 @@ source :rubygems
 gem 'sinatra'
 gem 'haml'
 gem 'compass'
-gem 'dropbox'
+gem 'dropbox', '1.3.0'
 gem 'sequel'
 gem 'rack-flash'
 gem 'rack_csrf'
 gem 'rdiscount'
-gem 'RedCloth'
+gem 'RedCloth', '4.2.9'
 gem 'org-ruby'
 group :development do
-  gem 'sqlite3-ruby'
-  gem 'ruby-debug'
+  gem 'sqlite3'
 end
 group :production do
   gem 'pg'
