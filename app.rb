@@ -19,7 +19,7 @@ configure do
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
   end
-  set :public, File.dirname(__FILE__) + '/static'
+  set :public_folder, File.dirname(__FILE__) + '/static'
   set :haml, :format => :html5
   set :sass, Compass.sass_engine_options
 end
